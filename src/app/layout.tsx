@@ -5,6 +5,7 @@ import Cs_ThemeProvider from "@/components/providers/ThemeProvider";
 import Cs_Navbar from "@/components/layout/Navbar";
 import Cs_Footer from "@/components/layout/Footer";
 import { Toaster } from "@/components/ui/sonner";
+import Cs_AuthSync from "@/components/auth/AuthSync";
 
 // font
 const cs_archivo = Archivo({
@@ -32,6 +33,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <main className="flex-1">{children}</main>
           <Cs_Footer />
           <Toaster position="top-center" />
+          <Cs_AuthSync />
         </Cs_ThemeProvider>
       </body>
     </html>

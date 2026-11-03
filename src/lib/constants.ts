@@ -6,6 +6,14 @@ export const CS_NAV_LINKS = [
   { label: "About Us", href: "/about" },
 ];
 
+// private links
+export const CS_USER_LINKS = [
+  { label: "Dashboard", href: "/dashboard" },
+  { label: "Add New Studio", href: "/add-studio" },
+  { label: "My Studio Listings", href: "/my-listings" },
+  { label: "My Bookings", href: "/my-bookings" },
+];
+
 // categories
 export const CS_CATEGORIES = [
   "Photo Studio",
