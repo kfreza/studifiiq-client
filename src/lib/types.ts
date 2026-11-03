@@ -26,3 +26,22 @@ export interface CsStudioList {
   page: number;
   totalPages: number;
 }
+
+// review
+export interface CsReview {
+  _id: string;
+  studioId: string;
+  userName: string;
+  userPhoto?: string;
+  rating: number;
+  comment: string;
+  createdAt: string;
+}
+
+// explore filters
+export interface CsStudioQuery {
+  category: string;
+  search: string;
+  sort: string;
+  page: string;
+}

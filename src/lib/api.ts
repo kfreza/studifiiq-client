@@ -1,5 +1,14 @@
 const CS_SERVER_URL = process.env.CS_API_URL || "http://localhost:5000";
 
+// api error with status
+export class CsApiError extends Error {
+  status: number;
+  constructor(message: string, status: number) {
+    super(message);
+    this.status = status;
+  }
+}
+
 // server calls express directly, browser goes through the next proxy
 export const cs_apiUrl = (path: string) =>
   typeof window === "undefined" ? `${CS_SERVER_URL}/api${path}` : `/api${path}`;
@@ -23,7 +32,7 @@ export async function cs_apiFetch<T>(path: string, init: RequestInit = {}): Prom
 
   const cs_data = await cs_res.json().catch(() => null);
   if (!cs_res.ok) {
-    throw new Error(cs_data?.message || "Something went wrong. Please try again.");
+    throw new CsApiError(cs_data?.message || "Something went wrong. Please try again.", cs_res.status);
   }
   return cs_data as T;
 }
