@@ -1,8 +1,4 @@
-import dns from "node:dns";
 import { MongoClient } from "mongodb";
-
-// dns fix for srv lookup on local networks
-if (process.env.NODE_ENV !== "production") dns.setServers(["8.8.8.8", "1.1.1.1"]);
 
 const cs_uri = process.env.CS_MONGODB_URI;
 if (!cs_uri) throw new Error("CS_MONGODB_URI is missing in .env.local");
