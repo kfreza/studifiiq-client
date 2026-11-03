@@ -177,7 +177,7 @@ export default function Cs_BookingDialog({
                 <ul className="mt-2 space-y-1 text-muted-foreground">
                   {cs_slots.map((slot) => (
                     <li key={`${slot.startTime}-${slot.endTime}-${slot.status}`}>
-                      {slot.startTime} to {slot.endTime}: {slot.status === "Confirmed" ? "booked" : "requested by another creator"}
+                      {slot.startTime} to {slot.endTime}: {slot.status === "Confirmed" ? "booked" : "pending request"}
                     </li>
                   ))}
                 </ul>
