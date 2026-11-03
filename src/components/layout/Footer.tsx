@@ -15,7 +15,7 @@ export default function Cs_Footer() {
   const cs_year = new Date().getFullYear();
 
   return (
-    <footer className="mt-24 border-t border-border bg-card">
+    <footer className="border-t border-border bg-card">
       <div className="cs_container grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.4fr]">
         {/* brand */}
         <div className="space-y-4">

@@ -1,22 +1,64 @@
 import Link from "next/link";
+import { Suspense } from "react";
 import { Button } from "@/components/ui/button";
+import Cs_SectionHeading from "@/components/shared/SectionHeading";
+import Cs_HeroSlider from "@/components/home/HeroSlider";
+import Cs_FeaturedStudios from "@/components/home/FeaturedStudios";
+import Cs_CategoryGrid from "@/components/home/CategoryGrid";
+import Cs_BookingSteps from "@/components/home/BookingSteps";
+import Cs_HostGuarantee from "@/components/home/HostGuarantee";
+import Cs_StudioGridSkeleton from "@/components/studio/StudioGridSkeleton";
+import { Skeleton } from "@/components/ui/skeleton";
 
 export default function Home() {
   return (
-    <section className="cs_container py-24">
-      <h1 className="cs_display max-w-3xl text-5xl sm:text-6xl">Book the room your next project needs.</h1>
-      <p className="cs_prose mt-6">
-        Photo studios, film stages, podcast lounges, music suites and art workshops, listed by the people who
-        run them and bookable by the hour.
-      </p>
-      <div className="mt-8 flex flex-wrap gap-3">
-        <Button size="lg" asChild>
-          <Link href="/studios">Explore Studios</Link>
-        </Button>
-        <Button size="lg" variant="outline" asChild>
-          <Link href="/add-studio">Host Your Space</Link>
-        </Button>
-      </div>
-    </section>
+    <>
+      <Cs_HeroSlider />
+
+      {/* featured */}
+      <section className="cs_container py-20">
+        <Cs_SectionHeading
+          title="Featured studios"
+          text="The highest-rated spaces on StudioSpace right now, chosen by the creators who booked them."
+          action={
+            <Button variant="outline" asChild>
+              <Link href="/studios">View all studios</Link>
+            </Button>
+          }
+        />
+        <Suspense fallback={<Cs_StudioGridSkeleton />}>
+          <Cs_FeaturedStudios />
+        </Suspense>
+      </section>
+
+      {/* categories */}
+      <section className="border-y border-border bg-card py-20">
+        <div className="cs_container">
+          <Cs_SectionHeading
+            title="Browse by studio type"
+            text="Every kind of creative room, from a single podcast mic to a full sound stage."
+          />
+          <Suspense fallback={<Skeleton className="h-52 w-full rounded-xl" />}>
+            <Cs_CategoryGrid />
+          </Suspense>
+        </div>
+      </section>
+
+      {/* booking steps */}
+      <section className="cs_container py-20">
+        <Cs_SectionHeading
+          title="How booking works"
+          text="From first search to first frame in four steps."
+        />
+        <Cs_BookingSteps />
+      </section>
+
+      {/* host guarantee */}
+      <section className="border-t border-border bg-card py-20">
+        <div className="cs_container">
+          <Cs_HostGuarantee />
+        </div>
+      </section>
+    </>
   );
 }
