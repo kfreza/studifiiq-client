@@ -4,10 +4,10 @@ import { cache, Suspense } from "react";
 import { Check, MapPin, Star, Users } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import Cs_StudioGallery from "@/components/studio/StudioGallery";
 import Cs_ReviewList from "@/components/studio/ReviewList";
+import Cs_BookingDialog from "@/components/booking/BookingDialog";
 import { cs_apiFetch } from "@/lib/api";
 import { cs_formatDate, cs_formatMoney } from "@/lib/format";
 import type { CsStudio } from "@/lib/types";
@@ -123,9 +123,15 @@ export default async function StudioDetailsPage({ params }: PageProps<"/studios/
             <p className="mt-2 text-sm text-muted-foreground">
               Plus a {cs_formatMoney(cs_studio.securityDeposit)} refundable security deposit per booking.
             </p>
-            <Button size="lg" className="mt-6 w-full" disabled title="Booking is added in the next step">
-              Book Workspace Now
-            </Button>
+            <Cs_BookingDialog
+              studio={{
+                _id: cs_studio._id,
+                title: cs_studio.title,
+                hourlyRate: cs_studio.hourlyRate,
+                securityDeposit: cs_studio.securityDeposit,
+                ownerEmail: cs_studio.ownerEmail,
+              }}
+            />
           </div>
 
           <div className="rounded-2xl border border-border bg-card p-6">

@@ -14,3 +14,12 @@ export const cs_buildQuery = (params: Record<string, string | number | undefined
   });
   return cs_search.toString();
 };
+
+// booking date "YYYY-MM-DD" shown without timezone shift
+export const cs_formatBookingDate = (date: string) =>
+  new Intl.DateTimeFormat("en-US", { weekday: "short", month: "short", day: "numeric", year: "numeric", timeZone: "UTC" }).format(
+    new Date(`${date}T00:00:00.000Z`)
+  );
+
+// local today as "YYYY-MM-DD"
+export const cs_todayString = () => new Date().toLocaleDateString("en-CA");

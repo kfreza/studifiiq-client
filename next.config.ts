@@ -15,8 +15,8 @@ const nextConfig: NextConfig = {
   // remote images
   images: {
     remotePatterns: [
-      { protocol: "https", hostname: "images.unsplash.com" },
-      { protocol: "https", hostname: "i.ibb.co" },
+      { protocol: "https", hostname: "**" },
+      { protocol: "http", hostname: "**" },
     ],
   },
   // api proxy to express
