@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { CalendarDays, Clock, MapPin, XCircle } from "lucide-react";
+import { CalendarDays, Clock, FileDown, MapPin, XCircle } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -13,6 +13,7 @@ import Cs_StatusBadge from "@/components/shared/StatusBadge";
 import { useCs_Fetch } from "@/hooks/useCsFetch";
 import { cs_apiFetch } from "@/lib/api";
 import { cs_formatBookingDate, cs_formatMoney } from "@/lib/format";
+import { cs_downloadInvoice } from "@/lib/invoice";
 import type { CsBooking, CsBookingStatus } from "@/lib/types";
 import { cn } from "@/lib/utils";
 
@@ -127,6 +128,20 @@ export default function Cs_MyBookingsView() {
                     <span className="font-semibold">{cs_formatMoney(booking.totalPrice)}</span>
                     <span className="text-muted-foreground"> total, incl. {cs_formatMoney(booking.securityDeposit)} deposit</span>
                   </p>
+                  {(booking.status === "Confirmed" || booking.status === "Completed") && (
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() =>
+                        cs_downloadInvoice(booking)
+                          .then(() => toast.success("Invoice downloaded."))
+                          .catch(() => toast.error("The invoice couldn't be created. Try again."))
+                      }
+                    >
+                      <FileDown />
+                      Download invoice
+                    </Button>
+                  )}
                   {booking.status === "Pending" && (
                     <Cs_ConfirmDialog
                       trigger={
