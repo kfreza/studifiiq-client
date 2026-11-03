@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Aperture, MapPin, Star } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import Cs_WishlistButton from "@/components/wishlist/WishlistButton";
 import type { CsStudio } from "@/lib/types";
 
 export default function Cs_StudioCard({ studio }: { studio: CsStudio }) {
@@ -24,10 +25,13 @@ export default function Cs_StudioCard({ studio }: { studio: CsStudio }) {
           <Aperture className="absolute inset-0 m-auto size-10 text-muted-foreground" />
         )}
         <Badge className="absolute top-3 left-3">{studio.category}</Badge>
-        <span className="absolute top-3 right-3 flex items-center gap-1 rounded-full bg-background/90 px-2.5 py-1 text-xs font-semibold">
-          <Star className="size-3.5 fill-cs-tape text-cs-tape" />
-          {studio.reviewCount ? studio.rating.toFixed(1) : "New"}
-        </span>
+        <div className="absolute top-3 right-3 flex items-center gap-2">
+          <span className="flex h-9 items-center gap-1 rounded-full bg-background/90 px-2.5 text-xs font-semibold">
+            <Star className="size-3.5 fill-cs-tape text-cs-tape" />
+            {studio.reviewCount ? studio.rating.toFixed(1) : "New"}
+          </span>
+          <Cs_WishlistButton studioId={studio._id} title={studio.title} />
+        </div>
       </div>
 
       {/* details */}

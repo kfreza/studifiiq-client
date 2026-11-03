@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { CalendarCheck, LayoutDashboard, LogOut, PlusSquare, Warehouse } from "lucide-react";
+import { CalendarCheck, Heart, LayoutDashboard, LogOut, PlusSquare, Warehouse } from "lucide-react";
 import { toast } from "sonner";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
@@ -16,7 +16,7 @@ import {
 import { cs_logout } from "@/lib/auth-client";
 import { CS_USER_LINKS } from "@/lib/constants";
 
-const CS_LINK_ICONS = [LayoutDashboard, PlusSquare, Warehouse, CalendarCheck];
+const CS_LINK_ICONS = [LayoutDashboard, PlusSquare, Warehouse, CalendarCheck, Heart];
 
 export const cs_initials = (name: string) =>
   name

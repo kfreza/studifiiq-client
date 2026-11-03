@@ -7,7 +7,9 @@ import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
 import Cs_StudioGallery from "@/components/studio/StudioGallery";
 import Cs_ReviewList from "@/components/studio/ReviewList";
+import Cs_ReviewForm from "@/components/studio/ReviewForm";
 import Cs_BookingDialog from "@/components/booking/BookingDialog";
+import Cs_WishlistButton from "@/components/wishlist/WishlistButton";
 import { cs_apiFetch } from "@/lib/api";
 import { cs_formatDate, cs_formatMoney } from "@/lib/format";
 import type { CsStudio } from "@/lib/types";
@@ -47,7 +49,10 @@ export default async function StudioDetailsPage({ params }: PageProps<"/studios/
       {/* header */}
       <header className="mb-8 space-y-4">
         <Badge>{cs_studio.category}</Badge>
-        <h1 className="cs_display text-4xl sm:text-5xl">{cs_studio.title}</h1>
+        <div className="flex items-start justify-between gap-4">
+          <h1 className="cs_display text-4xl sm:text-5xl">{cs_studio.title}</h1>
+          <Cs_WishlistButton studioId={cs_studio._id} title={cs_studio.title} className="mt-1 shrink-0 border border-border" />
+        </div>
         <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-muted-foreground">
           <span className="flex items-center gap-1.5">
             <MapPin className="size-4" />
@@ -107,6 +112,7 @@ export default async function StudioDetailsPage({ params }: PageProps<"/studios/
           {/* reviews */}
           <section className="space-y-6">
             <h2 className="text-2xl font-semibold">Reviews</h2>
+            <Cs_ReviewForm studioId={cs_studio._id} ownerEmail={cs_studio.ownerEmail} />
             <Suspense fallback={<Skeleton className="h-40 w-full" />}>
               <Cs_ReviewList studioId={cs_studio._id} />
             </Suspense>
