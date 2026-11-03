@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" suppressHydrationWarning className={`${cs_archivo.variable} h-full antialiased`}>
-      <body className="flex min-h-full flex-col">
+      <body suppressHydrationWarning className="flex min-h-full flex-col">
         <Cs_ThemeProvider>
           <Cs_Navbar />
           <main className="flex-1">{children}</main>
