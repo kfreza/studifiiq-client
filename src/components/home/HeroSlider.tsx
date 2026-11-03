@@ -106,7 +106,8 @@ export default function Cs_HeroSlider() {
                 ref={(element) => {
                   cs_barRefs.current[index] = element;
                 }}
-                className="absolute inset-0 origin-left scale-x-0 rounded-full bg-white"
+                style={{ transform: "scaleX(0)" }}
+                className="absolute inset-0 origin-left rounded-full bg-white"
               />
             </button>
           ))}
