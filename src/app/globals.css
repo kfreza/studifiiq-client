@@ -162,6 +162,6 @@
   }
   .cs_nav_link_active::after {
     content: "";
-    @apply absolute inset-x-3 -bottom-[14px] h-0.5 rounded-full bg-primary;
+    @apply absolute inset-x-3 -bottom-3.5 h-0.5 rounded-full bg-primary;
   }
 }
