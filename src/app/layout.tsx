@@ -18,8 +18,8 @@ const cs_archivo = Archivo({
 
 export const metadata: Metadata = {
   title: {
-    default: "StudioSpace | Book creative studios by the hour",
-    template: "%s | StudioSpace",
+    default: "Studifiiq | Book creative studios by the hour",
+    template: "%s | Studifiiq",
   },
   description:
     "Find and book photo studios, film stages, podcast lounges, music suites and art workshops by the hour, or list your own creative space.",

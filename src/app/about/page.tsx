@@ -21,7 +21,7 @@ export default function AboutPage() {
           and have no simple way to find them.
         </p>
         <p className="cs_prose">
-          StudioSpace puts both sides in one place. Hosts list their rooms with honest photos and prices, and
+          Studifiiq puts both sides in one place. Hosts list their rooms with honest photos and prices, and
           creators book exactly the hours they need, without long contracts or back-and-forth emails.
         </p>
       </header>

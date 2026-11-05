@@ -35,7 +35,7 @@ export default function HowItWorksPage() {
   return (
     <div className="cs_container space-y-20 py-16">
       <header className="space-y-4">
-        <h1 className="cs_display text-4xl sm:text-5xl">How StudioSpace works</h1>
+        <h1 className="cs_display text-4xl sm:text-5xl">How Studifiiq works</h1>
         <p className="cs_prose">
           Creators book spaces by the hour. Hosts earn from rooms that would otherwise sit empty. Here is what
           each side of a booking looks like.

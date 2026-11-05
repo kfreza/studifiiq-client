@@ -32,7 +32,7 @@ export default function Cs_HostGuarantee() {
         <h2 className="cs_section_title">Host with confidence. Create with support.</h2>
         <p className="cs_prose">
           Opening your studio to other creators should feel as safe as working in it yourself. These protections
-          apply to every booking on StudioSpace.
+          apply to every booking on Studifiiq.
         </p>
         <Button size="lg" asChild>
           <Link href="/add-studio">Host Your Space</Link>

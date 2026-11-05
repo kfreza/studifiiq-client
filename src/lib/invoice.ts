@@ -20,7 +20,7 @@ export async function cs_downloadInvoice(booking: CsBooking) {
   cs_doc.setTextColor(255, 255, 255);
   cs_doc.setFont("helvetica", "bold");
   cs_doc.setFontSize(24);
-  cs_doc.text("StudioSpace", cs_left, 56);
+  cs_doc.text("Studifiiq", cs_left, 56);
   cs_doc.setFont("helvetica", "normal");
   cs_doc.setFontSize(11);
   cs_doc.text("Booking invoice", cs_right, 50, { align: "right" });
@@ -92,10 +92,10 @@ export async function cs_downloadInvoice(booking: CsBooking) {
   cs_doc.setFontSize(9);
   cs_doc.setTextColor(...CS_MUTED);
   cs_doc.text(
-    "Thank you for booking with StudioSpace. Questions about this booking? Contact your host or support@studiospace.dev.",
+    "Thank you for booking with Studifiiq. Questions about this booking? Contact your host or support@studifiiq.dev.",
     cs_left,
     cs_doc.internal.pageSize.getHeight() - 48
   );
 
-  cs_doc.save(`StudioSpace-invoice-${cs_number}.pdf`);
+  cs_doc.save(`Studifiiq-invoice-${cs_number}.pdf`);
 }

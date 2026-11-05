@@ -5,10 +5,10 @@ import Cs_NewsletterForm from "@/components/layout/NewsletterForm";
 import { CS_CATEGORIES, CS_NAV_LINKS, cs_categoryHref } from "@/lib/constants";
 
 const CS_SOCIALS = [
-  { label: "StudioSpace on X", href: "https://x.com", icon: FaXTwitter },
-  { label: "StudioSpace on Instagram", href: "https://instagram.com", icon: FaInstagram },
-  { label: "StudioSpace on YouTube", href: "https://youtube.com", icon: FaYoutube },
-  { label: "StudioSpace on LinkedIn", href: "https://linkedin.com", icon: FaLinkedinIn },
+  { label: "Studifiiq on X", href: "https://x.com", icon: FaXTwitter },
+  { label: "Studifiiq on Instagram", href: "https://instagram.com", icon: FaInstagram },
+  { label: "Studifiiq on YouTube", href: "https://youtube.com", icon: FaYoutube },
+  { label: "Studifiiq on LinkedIn", href: "https://linkedin.com", icon: FaLinkedinIn },
 ];
 
 export default function Cs_Footer() {
@@ -21,7 +21,7 @@ export default function Cs_Footer() {
         <div className="space-y-4">
           <Cs_Logo />
           <p className="max-w-xs text-sm leading-6 text-muted-foreground">
-            StudioSpace connects creators with independent studio owners, so every shoot, session and class
+            Studifiiq connects creators with independent studio owners, so every shoot, session and class
             finds the right room at a fair hourly rate.
           </p>
           <ul className="flex gap-2">
@@ -87,7 +87,7 @@ export default function Cs_Footer() {
       {/* bottom bar */}
       <div className="border-t border-border">
         <div className="cs_container flex flex-col gap-2 py-5 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
-          <p>&copy; {cs_year} StudioSpace. All rights reserved.</p>
+          <p>&copy; {cs_year} Studifiiq. All rights reserved.</p>
           <p>
             By booking or listing a space you agree to our{" "}
             <Link href="/terms" className="underline underline-offset-4 hover:text-foreground">

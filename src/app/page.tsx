@@ -19,7 +19,7 @@ export default function Home() {
       <section className="cs_container py-20">
         <Cs_SectionHeading
           title="Featured studios"
-          text="The highest-rated spaces on StudioSpace right now, chosen by the creators who booked them."
+          text="The highest-rated spaces on Studifiiq right now, chosen by the creators who booked them."
           action={
             <Button variant="outline" asChild>
               <Link href="/studios">View all studios</Link>

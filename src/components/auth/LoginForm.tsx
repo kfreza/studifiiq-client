@@ -79,7 +79,7 @@ export default function Cs_LoginForm() {
       <Cs_GoogleButton callbackURL={cs_redirect} />
 
       <p className="mt-8 text-center text-sm text-muted-foreground">
-        New to StudioSpace?{" "}
+        New to Studifiiq?{" "}
         <Link href="/register" className="font-medium text-primary underline-offset-4 hover:underline">
           Create an account
         </Link>

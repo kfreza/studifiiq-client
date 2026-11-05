@@ -1,4 +1,4 @@
-# StudioSpace
+# Studifiiq
 
 A peer-to-peer marketplace for creative workspaces. Studio owners list photo studios, film stages, podcast lounges, music suites and art workshops, and creators find, compare and book them by the hour.
 

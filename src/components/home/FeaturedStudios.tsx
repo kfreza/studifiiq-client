@@ -17,7 +17,7 @@ export default async function Cs_FeaturedStudios() {
     return (
       <Cs_EmptyState
         title="No studios listed yet"
-        text="Be the first host on StudioSpace. List your space and it will appear here for creators to book."
+        text="Be the first host on Studifiiq. List your space and it will appear here for creators to book."
         action={
           <Button asChild>
             <Link href="/add-studio">Host Your Space</Link>
