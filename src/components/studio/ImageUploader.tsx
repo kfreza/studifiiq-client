@@ -9,7 +9,7 @@ import { Input } from "@/components/ui/input";
 import { cs_apiFetch } from "@/lib/api";
 
 const CS_MAX_IMAGES = 6;
-const CS_MAX_BYTES = 4 * 1024 * 1024;
+const CS_MAX_BYTES = 3 * 1024 * 1024;
 
 const cs_isUrl = (value: string) => {
   try {
@@ -49,7 +49,7 @@ export default function Cs_ImageUploader({
     event.target.value = "";
     if (!cs_file) return;
     if (!cs_file.type.startsWith("image/")) return void toast.error("Choose an image file (JPG, PNG or WebP).");
-    if (cs_file.size > CS_MAX_BYTES) return void toast.error("Images must be 4 MB or smaller.");
+    if (cs_file.size > CS_MAX_BYTES) return void toast.error("Images must be 3 MB or smaller.");
 
     cs_setUploading(true);
     try {
@@ -134,7 +134,7 @@ export default function Cs_ImageUploader({
         </div>
       </div>
       <p className="text-xs text-muted-foreground">
-        {images.length}/{CS_MAX_IMAGES} photos. The first photo is the cover. JPG, PNG or WebP up to 4 MB.
+        {images.length}/{CS_MAX_IMAGES} photos. The first photo is the cover. JPG, PNG or WebP up to 3 MB.
       </p>
     </div>
   );
